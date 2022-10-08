@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {Suspense} from 'react';
+
+import LoadingSpinner from 'components/UI/LoadingSpinner';
+
+const HomePage = React.lazy(() => import('pages/Home'));
 
 function App() {
     return (
-       <h1>Etraveli</h1>
+        <Suspense
+            fallback={
+                <div className="centered">
+                    <LoadingSpinner />
+                </div>
+            }
+        >
+            <HomePage />
+        </Suspense>
     );
 }
 
