@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React, { Suspense } from 'react';
 
 import LoadingSpinner from 'components/UI/LoadingSpinner';
 
@@ -11,8 +11,7 @@ function App() {
                 <div className="centered">
                     <LoadingSpinner />
                 </div>
-            }
-        >
+            }>
             <HomePage />
         </Suspense>
     );

@@ -7,9 +7,12 @@ import SearchDetail from 'components/SearchDetail';
 const HomePage: React.FC = () => {
     return (
         <>
-            <Layout><SearchResult /><SearchDetail /></Layout>
+            <Layout>
+                <SearchResult />
+                <SearchDetail />
+            </Layout>
         </>
     );
-}
+};
 
 export default HomePage;

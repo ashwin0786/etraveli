@@ -1,0 +1,18 @@
+.sortby-options {
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    margin-top: .2rem;
+    text-align: left;
+    position: absolute;
+    width: 10rem;
+
+    strong {
+        padding: 0.5rem 0.6rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
