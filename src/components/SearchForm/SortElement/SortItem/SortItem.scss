@@ -1,4 +1,4 @@
-li {
+li.sort-item {
     float: left;
     width: 100%;
     border-top: 1px solid #ccc;
@@ -10,7 +10,7 @@ li {
         width: 100%;
     }
 
-    &:hover {
+    &:hover, .selected {
         background: #f4f4f4;
     }
 }

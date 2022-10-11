@@ -1,0 +1,25 @@
+li.movie-item {
+    border: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 0.5rem;
+    padding: 0.8rem 0.5rem;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+
+    span {
+        font-size: 14px;
+
+        &:nth-child(2) {
+            font-weight: bold;
+        }
+
+        &:last-child {
+            font-size: 12px;
+        }
+    }
+
+    &.selected {
+        background-color: #f4f4f4;
+    }
+}

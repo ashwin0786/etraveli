@@ -1,6 +1,7 @@
 form {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 5rem 6fr;
+  grid-gap: 0.8rem;
   width: 100%;
   max-width: 40rem;
   position: relative;

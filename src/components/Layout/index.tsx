@@ -11,7 +11,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className="layout-container">
             <Header />
-            {children}
+            <div className="search-result-wrapper">
+                {children}
+            </div>
         </div>
     );
 };
