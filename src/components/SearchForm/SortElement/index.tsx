@@ -26,7 +26,7 @@ const SortElement: React.FC = () => {
     return (
         <div className="form-control">
             <div className="sortby-wrapper">
-                <button type="button" onClick={toggleSortOptions}>{data.sortBy}</button>
+                <button aria-label="sort-button" type="button" onClick={toggleSortOptions}>{data.sortBy}</button>
                 { isSortOptionVisible && <SortOptions selectedCode={selectedCode} sortHandler={sortHandler} />}
             </div>
         </div>

@@ -9,6 +9,7 @@ import { sortMovies } from 'lib/api';
 import Layout from 'components/Layout';
 import SearchResult from 'components/SearchResult';
 import SearchDetail from 'components/SearchDetail';
+import ErrorBoundary from 'components/ErrorBoundary';
 
 const HomePage: React.FC = () => {
     let updatedData, selectedMovie;
@@ -53,7 +54,9 @@ const HomePage: React.FC = () => {
     return (
         <>
             <Layout>
+                <ErrorBoundary>
                 <SearchResult selectedEpisodeId={episodeId} onSelect={setEpisodeHandler} updatedData={updatedData} />
+                </ErrorBoundary>
                 <SearchDetail selectedMovie={selectedMovie} />
             </Layout>
         </>
