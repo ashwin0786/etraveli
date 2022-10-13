@@ -1,11 +1,8 @@
 import React from 'react';
 
-import Header from 'components/Header';
+import Header from 'components/Header/Header';
+import { LayoutProps } from 'model';
 import './Layout.scss';
-
-interface LayoutProps {
-    children: React.ReactNode;
-}
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (

@@ -2,18 +2,14 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useSearchResults } from 'components/SearchResult/useSearchResults';
-import LoadingSpinner from 'components/UI/LoadingSpinner';
+import { LoadingSpinner, Layout, SearchDetail, SearchResult, ErrorBoundary } from 'components';
 import type { RootState } from 'store';
 import { sortMovies } from 'lib/api';
-
-import Layout from 'components/Layout';
-import SearchResult from 'components/SearchResult';
-import SearchDetail from 'components/SearchDetail';
-import ErrorBoundary from 'components/ErrorBoundary';
+import { Movie } from 'model';
 
 const HomePage: React.FC = () => {
     let updatedData, selectedMovie;
-    const [ episodeId, setEpisodeId ] = useState<number>();
+    const [episodeId, setEpisodeId] = useState<number>();
     const selectedCode = useSelector((state: RootState) => state.sort.sortCode);
     const searchVal = useSelector((state: RootState) => state.search.searchVal);
 
@@ -40,11 +36,11 @@ const HomePage: React.FC = () => {
     }
 
     if(updatedData && searchVal) {
-        updatedData = updatedData.filter((movie: any) => movie.title.includes(searchVal));
+        updatedData = updatedData.filter((movie: Movie) => movie.title.includes(searchVal));
     }
 
     if(updatedData && episodeId) {
-        selectedMovie = updatedData.find((movie: any) => movie.episode_id === episodeId);
+        selectedMovie = updatedData.find((movie: Movie) => movie.episode_id === episodeId);
     }
 
     function setEpisodeHandler(episodeId: number) {
@@ -55,7 +51,7 @@ const HomePage: React.FC = () => {
         <>
             <Layout>
                 <ErrorBoundary>
-                <SearchResult selectedEpisodeId={episodeId} onSelect={setEpisodeHandler} updatedData={updatedData} />
+                    <SearchResult selectedEpisodeId={episodeId} onSelect={setEpisodeHandler} updatedData={updatedData} />
                 </ErrorBoundary>
                 <SearchDetail selectedMovie={selectedMovie} />
             </Layout>

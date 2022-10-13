@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Header from '.';
+import Header from './Header';
 
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';

@@ -1,8 +1,9 @@
 import React from 'react';
 
 import './SearchDetail.scss';
+import { Movie } from 'model';
 
-const SearchDetail: React.FC<{ selectedMovie: any }> = ({ selectedMovie}) => {
+const SearchDetail: React.FC<{ selectedMovie: Movie }> = ({ selectedMovie}) => {
 
     return (
         <div className="search-detail">
